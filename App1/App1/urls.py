@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path , include
 # from TVShows import urls
 
+admin.site.site_header = "Tvshows"
+admin.site.site_title = "Tvshows Portal"
+admin.site.index_title = "Welcome to Tvshows portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('TVShows.urls')),
-
-
 ]
