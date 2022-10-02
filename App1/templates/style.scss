@@ -9,5 +9,16 @@ body{
     background-color: rgb(80, 80, 80);
     #explore{
         min-height: 35vh;
+        #Slider{
+                //   width: 100vw;
+                  max-height: 35vh;
+                  .left,.right{
+                    // width: ;
+                    padding: 2rem;
+                  }
+                  .content{
+                    min-width :90vw
+                  }
+        }
     }
 }
