@@ -7,17 +7,4 @@
 body {
   max-width: 100vh;
   overflow: hidden;
-  background-color: rgb(80, 80, 80);
 }
-body #explore {
-  min-height: 35vh;
-}
-body #explore #Slider {
-  max-height: 35vh;
-}
-body #explore #Slider .left, body #explore #Slider .right {
-  padding: 2rem;
-}
-body #explore #Slider .content {
-  min-width: 90vw;
-}/*# sourceMappingURL=style.css.map */

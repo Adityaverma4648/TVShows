@@ -1,5 +1,4 @@
-windows.onload = function(){
+import * as data from './tv_shows.csv';
 
-  // $getJson("tv_shows.json",function(data){var })
-  console.log('hello')
-}
+const {Year} = data;
+console.log(Year)
