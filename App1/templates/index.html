@@ -18,6 +18,13 @@
     <!-- scss import  -->
     <!-- <link rel="stylesheet" href="style.css">
      -->
+
+     <!-- React cdn links imports -->
+     <!-- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script> -->
+
+
+
      <style>
           .left-icon,.right-icon{
             cursor : pointer;
@@ -30,6 +37,14 @@
             transition: all 0.3s ease-in-out;
             background-color: rgba(255,255,255,0.3);
           }
+          .movie{
+            background-color: rgb(95, 95, 95);
+            height: 30vh;
+            width: 400px;
+            margin: 0px 2px;
+
+          }
+          
      </style>
      <!--  Jquery -->
      <script src=
@@ -70,10 +85,45 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <div>
+               <button type="button" class="btn btn-outline-info btn-lg text-white me-3 px-3" data-bs-toggle="modal" data-bs-target="#Login">Login</button>
+            </div>
+        
+             
+             <!-- Modal -->
+             <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content  ">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                  <div class="modal-body">
+                    <div class="container-fluid">
+                      Add rows here
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                  </div>
+                </div>
+              </div>
+             </div>
+             
+             <script>
+              var modalId = document.getElementById('modalId');
+             
+              modalId.addEventListener('show.bs.modal', function (event) {
+                  // Button that triggered the modal
+                  let button = event.relatedTarget;
+                  // Extract info from data-bs-* attributes
+                  let recipient = button.getAttribute('data-bs-whatever');
+             
+                // Use above variables to manipulate the DOM
+              });
+             </script>
+             
           </div>
         </div>
       </nav>
@@ -90,44 +140,42 @@
             See more
           </a>
           </span>
-          <div class="col-sm-12 d-flex justify-content-center align-items-center bg-dark py-4" id="Slider" style="height: 35vh;">
+          <!-- <div class="col-sm-12 d-flex justify-content-center align-items-center bg-dark py-4" id="Slider" style="height: 35vh;">
                <div class="icon left-icon px-4 py-5 border border-1 border-white text-info rounded-end rounded">
                   <i class="fa fa-caret-left" style="font-size: 25px;"></i>
                </div>
                <div class="content px-3 d-flex align-items-center justify-content-center bg-danger" style="width:90vw;">
 
-                        <div class="col-sm-12 bg-warning">
+                        <div class="col-sm-12 bg-warning d-flex justify-content-center align-items-center">
                              <div class="movie1 movie">
                                   
+                                 <h4 class="title"></h4>
+                                 <span class="year"></span>
+                                 <span class="IMBD"></span>
+                             </div>
+                             <div class="movie2 movie">
+                                  
+                                 <h4 class="title"></h4>
+                                 <span class="year"></span>
+                                 <span class="IMBD"></span>
+                             </div>
+                             <div class="movie3 movie">
+                                  
+                                 <h4 class="title"></h4>
+                                 <span class="year"></span>
+                                 <span class="IMBD"></span>
+                             </div>
+                             <div class="movie4 movie">
+                                   <h4 class="title"></h4>
+                                   <span class="year"></span>
+                                   <span class="IMBD"></span>
                               
                              </div>
-                             <div class="movie1 movie">
+                             <div class="movie5 movie">
 
-                              
-                             </div>
-                             <div class="movie1 movie">
-
-                              
-                             </div>
-                             <div class="movie1 movie">
-
-                              
-                             </div>
-                             <div class="movie1 movie">
-
-                              
-                             </div>
-                             <div class="movie1 movie">
-
-                              
-                             </div>
-                             <div class="movie1 movie">
-
-                              
-                             </div>
-                             <div class="movie1 movie">
-
-                              
+                                   <h4 class="title"></h4>
+                                   <span class="year"></span>
+                                   <span class="IMBD"></span>                              
                              </div>
                         </div>
                </div>
@@ -135,9 +183,13 @@
                 <i class="fa fa-caret-right" style="font-size: 35px;"></i>
                </div>
 
+          </div> -->
+          <div class="ContainerCards">
+               <div id="entertaincards"></div>
           </div>
-      </section>
+        </section>
 
       <script src="index.js"></script>
 </body>
 </html>
+
