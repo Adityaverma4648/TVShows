@@ -72,44 +72,15 @@
               </li>
             </ul>
             <div>
-               <button type="button" class="btn btn-outline-info btn text-white me-3 px-3" data-bs-toggle="modal" data-bs-target="#Login">Login</button>
+              <a href="register" class="text-decoration-none me-3 px-3 h4 text-info" >Register</a>
+               <a href="login" class="text-decoration-none me-3 px-3 h4 text-warning" >Login</a>
             </div>
-        
-             
-             <!-- Modal -->
-             <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content  ">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitleId">Login</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                  <div class="modal-body d-flex justify-content-center align-items-center">
-                    <div class="container-fluid container-fluid">
-                       <div class="form-container">
-                          <input type="text" placeholder="Enter your Email or username">
-                          <input type="password" placeholder="Enter your password">
-                       </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Login</button>
-                  </div>
-                </div>
-              </div>
              </div>
-             
           </div>
         </div>
       </nav> 
 
       {% block body %}{% endblock body %}
-
-                     
-
-
-
 
 </body>
 </html>
