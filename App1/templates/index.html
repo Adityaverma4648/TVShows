@@ -1,195 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TvShows</title>
-    <!-- FontAwesome cdn link   -->
-    <script src="https://kit.fontawesome.com/8dc03a4776.js" crossorigin="anonymous"></script>
+{% extends 'base.html' %}
 
-    <!--  bootstrap import -->
-            <!-- Latest compiled and minified CSS -->
-             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-             <!-- Latest compiled JavaScript -->
-             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- scss import  -->
-    <!-- <link rel="stylesheet" href="style.css">
-     -->
-
-     <!-- React cdn links imports -->
-     <!-- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script> -->
+{% block title %}Home{% endblock title %}
 
 
+{% block body %}
+   
+      
+<section class="bg-black text-white d-flex flex-column justify-content-center align-items-center" id="explore">
+  <div class="d-flex text-white bg-black py-2 h3">
+      Explore Latest Movies , WebSeries And Animes
+  </div>
+  <hr style="width : 100vw;border:1px solid rgb(156, 156, 156);">
+ <span class="d-flex align-items-center justify-content-end px-3 py-1" style="width: 100vw;">
+  <a href="#" class="text-decoration-none text-white py-1">
+   <i class="fa fa-plus-square"></i>
+   See more
+ </a>
+ </span>
+ <div class="col-sm-12 d-flex justify-content-center align-items-center bg-dark py-4" id="Slider" style="height: 35vh;">
+      <div class="icon left-icon px-4 py-5 border border-1 border-white text-info rounded-end rounded">
+         <i class="fa fa-caret-left" style="font-size: 25px;"></i>
+      </div>
+      <div class="content px-3 d-flex align-items-center justify-content-center bg-danger" style="width:90vw;">
 
-     <style>
-          .left-icon,.right-icon{
-            cursor : pointer;
-          }
-          .left-icon:hover{
-            transition: all 0.3s ease-in-out;
-            background-color: rgba(255,255,255,0.3);
-          }
-          .right-icon:hover{
-            transition: all 0.3s ease-in-out;
-            background-color: rgba(255,255,255,0.3);
-          }
-          .movie{
-            background-color: rgb(95, 95, 95);
-            height: 30vh;
-            width: 400px;
-            margin: 0px 2px;
-
-          }
-          
-     </style>
-     <!--  Jquery -->
-     <script src=
-     "https://code.jquery.com/jquery-3.5.1.js">
-      </script>
-</head>
-<body>
-    <!--  navbar  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">TVShows</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contacts">Contacts</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="services" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Services
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Stream here</a></li>
-                  <li><a class="dropdown-item" href="#">High Quality Downloads</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Most viewed</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <div>
-               <button type="button" class="btn btn-outline-info btn-lg text-white me-3 px-3" data-bs-toggle="modal" data-bs-target="#Login">Login</button>
-            </div>
-        
-             
-             <!-- Modal -->
-             <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content  ">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                  <div class="modal-body">
-                    <div class="container-fluid">
-                      Add rows here
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                  </div>
-                </div>
-              </div>
-             </div>
-             
-             <script>
-              var modalId = document.getElementById('modalId');
-             
-              modalId.addEventListener('show.bs.modal', function (event) {
-                  // Button that triggered the modal
-                  let button = event.relatedTarget;
-                  // Extract info from data-bs-* attributes
-                  let recipient = button.getAttribute('data-bs-whatever');
-             
-                // Use above variables to manipulate the DOM
-              });
-             </script>
-             
-          </div>
-        </div>
-      </nav>
-
-
-      <section class="bg-black text-white d-flex flex-column justify-content-center align-items-center" id="explore">
-           <div class="d-flex text-white bg-black py-2 h3">
-               Explore Latest Movies , WebSeries And Animes
-           </div>
-           <hr style="width : 100vw;border:1px solid rgb(156, 156, 156);">
-          <span class="d-flex align-items-center justify-content-end px-3 py-1" style="width: 100vw;">
-           <a href="#" class="text-decoration-none text-white py-1">
-            <i class="fa fa-plus-square"></i>
-            See more
-          </a>
-          </span>
-          <!-- <div class="col-sm-12 d-flex justify-content-center align-items-center bg-dark py-4" id="Slider" style="height: 35vh;">
-               <div class="icon left-icon px-4 py-5 border border-1 border-white text-info rounded-end rounded">
-                  <i class="fa fa-caret-left" style="font-size: 25px;"></i>
+               <div class="col-sm-12 bg-warning d-flex justify-content-center align-items-center" id="CardCont">
+                         jlo
                </div>
-               <div class="content px-3 d-flex align-items-center justify-content-center bg-danger" style="width:90vw;">
+      </div>
+      <div class="icon right-icon px-4 py-5 border border-1 border-white text-info rounded-start rounded-2">
+       <i class="fa fa-caret-right" style="font-size: 35px;"></i>
+      </div>
 
-                        <div class="col-sm-12 bg-warning d-flex justify-content-center align-items-center">
-                             <div class="movie1 movie">
-                                  
-                                 <h4 class="title"></h4>
-                                 <span class="year"></span>
-                                 <span class="IMBD"></span>
-                             </div>
-                             <div class="movie2 movie">
-                                  
-                                 <h4 class="title"></h4>
-                                 <span class="year"></span>
-                                 <span class="IMBD"></span>
-                             </div>
-                             <div class="movie3 movie">
-                                  
-                                 <h4 class="title"></h4>
-                                 <span class="year"></span>
-                                 <span class="IMBD"></span>
-                             </div>
-                             <div class="movie4 movie">
-                                   <h4 class="title"></h4>
-                                   <span class="year"></span>
-                                   <span class="IMBD"></span>
-                              
-                             </div>
-                             <div class="movie5 movie">
-
-                                   <h4 class="title"></h4>
-                                   <span class="year"></span>
-                                   <span class="IMBD"></span>                              
-                             </div>
-                        </div>
-               </div>
-               <div class="icon right-icon px-4 py-5 border border-1 border-white text-info rounded-start rounded-2">
-                <i class="fa fa-caret-right" style="font-size: 35px;"></i>
-               </div>
-
-          </div> -->
-          <div class="ContainerCards">
-               <div id="entertaincards"></div>
-          </div>
-        </section>
-
-      <script src="index.js"></script>
-</body>
-</html>
-
+ </div>
+</section>
+{% endblock body %}
