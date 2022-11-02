@@ -20,4 +20,4 @@ def login(request):
 
 def api(request):
     response = requests.get("https://youtube-v31.p.rapidapi.com/search").json()
-    return render(request,"index.html",{'response':response})
+    return render(request,"api.html",{'response':response})
