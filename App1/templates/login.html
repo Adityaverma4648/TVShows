@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div style="height : 100vh;max-width:100vw;" class="bg-black text-white">
+
+   
+<p class="container text-center py-3 h1">login</p>
+
+<form action="" method="POST" class="container text-center">
+    {% csrf_token %}
+    {% for field in form %}
+        <p>{{ field.label }}: <br> {{ field }}</p>
+    {% endfor %}
+    <button type="submit" class="border-0 py-3 px-2">Login</button>
+</form>
+
+<p>Don't have an account? <a href="{% url 'register' %}">Regsiter here</a></p>
+
+</div>
+
+{% endblock body %}

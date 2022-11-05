@@ -1,17 +1,32 @@
 {% extends "base.html" %}
+{% block body %}
+   <div class="container-fluid bg-black text-white d-flex flex-column justify-content-center align-items-center" style="height: 40vh;">
+            <h1 class="h1 text-secondary opacity-50 position-absolute" style="font-size:250px;">
+                 Register
+            </h1>
+            <div class="form d-flex flex-column justify-content-center align-items-center" style="z-index: 999;">
+                {% comment %} <input type="text" class="py-2 px-3 my-2 border-0" placeholder="Enter UserID">
 
-{% block content %} 
-
-{% comment %} {% load crispy_forms_tags %}          {% endcomment %}
-
-<!--Register--> 
-{% comment %} <div class="container py-5">
-	<h1>Register</h1>
-	<form method="POST" class="bg-black container-fluid"> 
-        <label for="name">Name<>
-		<button class="btn btn-primary" type="submit">Register</button>
-	</form>
-	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
-</div>
-
-{% endblock %} {% endcomment %}
+                <input type="password" class="py-2 px-3 my-2 border-0" placeholder="Enter password">
+             
+                  {% endcomment %}
+                  <form action="" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                      <div>
+                        <p class="py-1">{{ field.label }} <span class="px-2"> : </span> 
+                               <br>
+                            <span class="row">
+                                {{field}} 
+                            </span>
+                        </p>
+                        {% for error in field.errors %}
+                        <small style="color: red">{{ error }}</small>
+                        {% endfor %}
+                      </div>
+                      {% endfor %}
+                    <button type="submit" class="border-0 px-3 py-2" >Register</button>
+                  </form>
+            </div>
+   </div>
+{% endblock body %}

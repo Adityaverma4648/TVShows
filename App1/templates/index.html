@@ -1,8 +1,6 @@
-
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock title %}
-
 
 {% block body %}
    
@@ -23,9 +21,11 @@
          <i class="fa fa-caret-left" style="font-size: 25px;"></i>
       </div>
       <div class="content px-3 d-flex align-items-center justify-content-center bg-danger" style="width:90vw;">
-
                <div class="col-sm-12 bg-warning d-flex justify-content-center align-items-center" id="CardCont">
-                   {% comment %} {%for i in %} {% endcomment %}
+                  
+                {% block apiFetch %}
+                  
+                {% endblock apiFetch %}
                 
                </div>
       </div>
@@ -34,6 +34,5 @@
       </div>
 
  </div>
-
-</section>
+</section> 
 {% endblock body %}
